@@ -8,6 +8,9 @@
         active.src = button.dataset.image;
         active.removeAttribute('srcset');
         active.alt = button.dataset.alt || '';
+        active.style.objectFit = button.dataset.fit || 'cover';
+        const caption = section.querySelector('[data-gallery-caption]');
+        if (caption) caption.textContent = button.dataset.label || active.alt;
         section.querySelectorAll('.gallery-thumb').forEach(item => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
       }));
     });

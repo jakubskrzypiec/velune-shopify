@@ -2,7 +2,10 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {},
+      "settings": {
+        "sales_heading": "Zamień zwykły wieczór w swoją ulubioną chwilę.",
+        "sales_copy": "Inspiracja pieczonymi jabłkami i złotą kruszonką. Ciepły, domowy klimat na wieczór z książką, kocem i chwilą tylko dla siebie."
+      },
       "blocks": {
         "apple": {
           "type": "note",
@@ -93,10 +96,6 @@
         "company"
       ]
     },
-    "gift": {
-      "type": "gift",
-      "settings": {}
-    },
     "faq": {
       "type": "faq",
       "settings": {},
@@ -157,7 +156,6 @@
     "main",
     "story",
     "details",
-    "gift",
     "park",
     "faq",
     "related"

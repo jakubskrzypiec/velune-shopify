@@ -5,7 +5,9 @@
       "settings": {
         "fallback_title": "Cinnamon",
         "subtitle": "Korzenny akcent na spokojny wieczór.",
-        "description": "<p>Cinnamon czerpie inspirację z cynamonu i domowych rytuałów. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Finalną kompozycję podamy przed premierą.</p>"
+        "description": "<p>Cinnamon czerpie inspirację z cynamonu i domowych rytuałów. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Finalną kompozycję podamy przed premierą.</p>",
+        "sales_heading": "Otul dom ciepłem jesiennego wieczoru.",
+        "sales_copy": "Cynamonowa inspiracja, miękki koc i ulubiona muzyka. Wybierz Cinnamon na wieczory, do których chce się wracać."
       },
       "blocks": {
         "apple": {
@@ -103,10 +105,6 @@
         "company"
       ]
     },
-    "gift": {
-      "type": "gift",
-      "settings": {}
-    },
     "faq": {
       "type": "faq",
       "settings": {},
@@ -167,7 +165,6 @@
     "main",
     "story",
     "details",
-    "gift",
     "park",
     "faq",
     "related"
