@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "preview": "node tools/preview.cjs",
-    "check:theme": "node tools/check-theme.cjs"
+    "check:theme": "node tools/check-theme.cjs",
+    "build:preview": "node tools/export-preview.cjs"
   },
   "devDependencies": {
     "@shopify/theme-check-node": "3.30.1",

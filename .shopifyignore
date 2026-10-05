@@ -5,3 +5,11 @@ preview/*
 package*.json
 node_modules/*
 tools/*
+
+index.html
+.nojekyll
+collections/*
+products/*
+cart/*
+pages/*
+password/*

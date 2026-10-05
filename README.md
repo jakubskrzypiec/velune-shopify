@@ -21,3 +21,5 @@ Theme Check: no errors or warnings. Local browser checks cover brand-to-product 
 - `brand/velune-label-concept-v1.png`: front label visual concept, not print-ready artwork.
 
 No payments, sales or live theme deployment are enabled by this repository.
+
+GitHub Pages visual preview: https://jakubskrzypiec.github.io/velune-shopify/ . Run `npm run build:preview` after theme edits and commit the generated HTML. It uses preview data and does not run Shopify checkout. The generated preview files are excluded from Shopify uploads.
