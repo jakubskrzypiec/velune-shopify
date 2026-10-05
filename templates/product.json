@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {},
+      "blocks": {
+        "apple": {
+          "type": "note",
+          "settings": {
+            "label": "Pieczone jabłka"
+          }
+        },
+        "crumble": {
+          "type": "note",
+          "settings": {
+            "label": "Złota kruszonka"
+          }
+        },
+        "cozy": {
+          "type": "note",
+          "settings": {
+            "label": "Przytulny wieczór"
+          }
+        },
+        "details": {
+          "type": "accordion",
+          "settings": {
+            "title": "Co kryje słoik?",
+            "content": "<p>150 g wosku sojowego w brązowym słoiku 180 ml. Bawełniany knot. Producent deklaruje około 35 godzin palenia — rzeczywisty czas zależy od warunków użytkowania.</p><p>Finalną kompozycję i oznaczenia udostępnimy przed premierą.</p>"
+          }
+        },
+        "delivery": {
+          "type": "accordion",
+          "settings": {
+            "title": "Dostawa i zwroty",
+            "content": "<p>Przygotowujemy szczegóły dostawy i obsługi zwrotów. Koszty, terminy i zasady podamy przed rozpoczęciem sprzedaży.</p>"
+          }
+        },
+        "care": {
+          "type": "accordion",
+          "settings": {
+            "title": "Twój bezpieczny rytuał",
+            "content": "<p>Pal świecę pod nadzorem, na stabilnej powierzchni odpornej na ciepło, z dala od materiałów łatwopalnych, dzieci i zwierząt. Stosuj instrukcję producenta dołączoną do finalnego produktu.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "apple",
+        "crumble",
+        "cozy",
+        "details",
+        "delivery",
+        "care"
+      ]
+    },
+    "story": {
+      "type": "scent-story",
+      "settings": {}
+    },
+    "ritual": {
+      "type": "ritual",
+      "settings": {},
+      "blocks": {
+        "a": {
+          "type": "step",
+          "settings": {
+            "title": "Zwolnij.",
+            "copy": "<p>Odłóż telefon. Zaparz coś dobrego. Nic nie musisz.</p>"
+          }
+        },
+        "b": {
+          "type": "step",
+          "settings": {
+            "title": "Otul przestrzeń.",
+            "copy": "<p>Wybierz zapach, który pasuje do Twojego wieczoru.</p>"
+          }
+        },
+        "c": {
+          "type": "step",
+          "settings": {
+            "title": "Zostań chwilę.",
+            "copy": "<p>Ulubiona książka, miękki koc, przyjemnie znajomy dom.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "story",
+    "ritual"
+  ]
+}

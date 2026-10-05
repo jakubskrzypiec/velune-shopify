@@ -1,0 +1,37 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Velune",
+    "theme_author": "Velune",
+    "theme_version": "0.1.0",
+    "theme_documentation_url": "https://github.com/jakubskrzypiec/velune-shopify",
+    "theme_support_url": "https://github.com/jakubskrzypiec/velune-shopify/issues"
+  },
+  {
+    "name": "Marka",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Etap projektu",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "preview_mode",
+        "label": "Tryb przed premierą — ukryj ceny i zakup",
+        "default": true,
+        "info": "Wyłącz dopiero po potwierdzeniu produktów i logistyki. To ustawienie nie blokuje checkoutu Shopify; zachowaj hasło sklepu i nie publikuj motywu przed zgodą."
+      }
+    ]
+  }
+]

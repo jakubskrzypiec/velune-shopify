@@ -1,0 +1,111 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign product_title = product.title | default: section.settings.fallback_title %}
+<section class="product wrap" data-product-section>
+<nav class="breadcrumbs" aria-label="Ścieżka strony"><a href="{{ routes.root_url }}">Velune</a><span aria-hidden="true">/</span><a href="{{ routes.all_products_collection_url }}">Świece</a><span aria-hidden="true">/</span><span>{{ product_title | escape }}</span></nav>
+<div class="product-grid"><div class="gallery"><div class="gallery-main">{% render 'picture', image: product.featured_image, fallback: 'velune-apple-crumble.webp', alt: product_title, class: 'gallery-active', width: 1233, height: 1275, loading: 'eager', sizes: '(min-width: 900px) 50vw, 100vw' %}<span class="gallery-tag">{{ section.settings.image_tag | escape }}</span></div><div class="gallery-thumbs" aria-label="Zdjęcia produktu">{% if product.images.size > 0 %}{% for img in product.images %}<button class="gallery-thumb{% if forloop.first %} is-active{% endif %}" data-image="{{ img | image_url: width: 1600 }}" data-alt="{{ img.alt | default: product_title | escape }}" aria-label="Pokaż zdjęcie {{ forloop.index }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><img src="{{ img | image_url: width: 200 }}" alt="" width="200" height="200" loading="lazy"></button>{% endfor %}{% else %}<button class="gallery-thumb is-active" data-image="{{ 'velune-apple-crumble.webp' | asset_url }}" data-alt="Velune Apple Crumble — wizualizacja słoika" aria-label="Pokaż słoik" aria-pressed="true"><img src="{{ 'velune-apple-crumble.webp' | asset_url }}" alt="" width="200" height="200"></button><button class="gallery-thumb" data-image="{{ 'velune-autumn-hero.webp' | asset_url }}" data-alt="Apple Crumble w jesiennym wnętrzu" aria-label="Pokaż jesienną atmosferę" aria-pressed="false"><img src="{{ 'velune-autumn-hero.webp' | asset_url }}" alt="" width="200" height="200"></button><button class="gallery-thumb" data-image="{{ 'velune-apple-label.webp' | asset_url }}" data-alt="Ilustracja etykiety Apple Crumble" aria-label="Pokaż etykietę" aria-pressed="false"><img src="{{ 'velune-apple-label.webp' | asset_url }}" alt="" width="200" height="200"></button>{% endif %}</div><p class="gallery-caption">{% if settings.preview_mode %}Wizualizacja projektu. Finalny wygląd może się różnić.{% endif %}</p></div>
+<div class="product-info"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h1>{{ product_title | escape }}</h1><p class="product-subtitle">{{ section.settings.subtitle | escape }}</p><div class="scent-tags">{% for block in section.blocks %}{% if block.type == 'note' %}<span {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</span>{% endif %}{% endfor %}</div><div class="product-description prose">{% if product.description != blank %}{{ product.description }}{% else %}{{ section.settings.description }}{% endif %}</div>
+<div class="product-facts"><div><strong>{{ section.settings.weight | escape }}</strong><span>wosku sojowego</span></div><div><strong>{{ section.settings.volume | escape }}</strong><span>brązowego szkła</span></div><div><strong>{{ section.settings.burn_time | escape }}</strong><span>deklarowany czas palenia</span></div></div>
+{% if settings.preview_mode or product == blank %}<div class="purchase-preview"><p class="launch-note"><span class="status-dot"></span>{{ section.settings.launch_note | escape }}</p><button class="button button-dark purchase-button" disabled>Premiera wkrótce</button><p class="purchase-help">{{ section.settings.launch_detail | escape }}</p></div>{% else %}<p class="product-price">{{ current_variant.price | money }}</p>{% form 'product', product, id: 'ProductForm' %}<label class="variant-label" for="Variant-{{ section.id }}">Wariant</label><select name="id" id="Variant-{{ section.id }}" class="variant-select">{% for variant in product.variants %}<option value="{{ variant.id }}"{% if variant == current_variant %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>{{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} — niedostępny{% endunless %}</option>{% endfor %}</select><label class="variant-label" for="Quantity-{{ section.id }}">Liczba sztuk</label><input class="quantity" id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1"><button class="button button-dark purchase-button" type="submit" name="add"{% unless product.available %} disabled{% endunless %}>{% if product.available %}Dodaj do koszyka{% else %}Niedostępne{% endif %}</button>{% endform %}{% endif %}
+<a class="product-story-link text-link" href="#zapach">Wejdź w ten zapach <span aria-hidden="true">↓</span></a>
+<div class="product-accordions">{% for block in section.blocks %}{% if block.type == 'accordion' %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.title | escape }}<span aria-hidden="true">+</span></summary><div class="prose">{{ block.settings.content }}</div></details>{% endif %}{% endfor %}</div></div></div>
+{% if settings.preview_mode or product == blank %}<div class="mobile-product-bar"><div><strong>{{ product_title | escape }}</strong><span>Świeca sojowa · {{ section.settings.weight | escape }}</span></div><button disabled>Wkrótce</button></div>{% else %}<div class="mobile-product-bar"><div><strong>{{ product_title | escape }}</strong><span>{{ current_variant.price | money }}</span></div><a href="#ProductForm">Wybierz wariant ↑</a></div>{% endif %}
+</section>
+{% schema %}
+{
+  "name": "Karta świecy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "fallback_title",
+      "label": "Tytuł podglądu",
+      "default": "Apple Crumble"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Nadtytuł",
+      "default": "VELUNE / ŚWIECA ZAPACHOWA"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Podtytuł",
+      "default": "Twój ulubiony deser. Teraz jako domowy rytuał."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Opis podglądu",
+      "default": "<p>Wyobraź sobie jabłka prosto z piekarnika, złotą kruszonkę i wieczór, który nigdzie się nie spieszy.</p><p>Apple Crumble to nasz pomysł na zapach przytulnego domu. Słodki, ciepły, inspirowany małymi przyjemnościami jesieni.</p>"
+    },
+    {
+      "type": "text",
+      "id": "weight",
+      "label": "Masa wosku",
+      "default": "150 g"
+    },
+    {
+      "type": "text",
+      "id": "volume",
+      "label": "Pojemność",
+      "default": "180 ml"
+    },
+    {
+      "type": "text",
+      "id": "burn_time",
+      "label": "Czas palenia",
+      "default": "ok. 35 h"
+    },
+    {
+      "type": "text",
+      "id": "image_tag",
+      "label": "Etykieta zdjęcia",
+      "default": "JESIEŃ W SŁOIKU"
+    },
+    {
+      "type": "text",
+      "id": "launch_note",
+      "label": "Status premiery",
+      "default": "Ten zapach jest w przygotowaniu."
+    },
+    {
+      "type": "text",
+      "id": "launch_detail",
+      "label": "Informacja",
+      "default": "Cena i termin dostępności pojawią się przed premierą."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "note",
+      "name": "Skojarzenie zapachu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Skojarzenie",
+          "default": "Pieczone jabłka"
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Informacje rozwijane",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tytuł",
+          "default": "O świecy"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Treść",
+          "default": "<p>Wosk sojowy, bawełniany knot i brązowy słoik. Szczegóły finalnej kompozycji podamy przed premierą.</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

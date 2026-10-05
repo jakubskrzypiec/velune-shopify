@@ -1,0 +1,40 @@
+<footer class="footer"><div class="footer-main"><div><a href="{{ routes.root_url }}" class="footer-logo">velune</a><p>{{ section.settings.tagline | escape }}</p></div><div><span class="eyebrow">ODKRYJ</span><a href="{{ routes.all_products_collection_url }}">Nasze zapachy</a><a href="{{ routes.root_url }}#marka">O Velune</a></div><div><span class="eyebrow">JESTEŚMY BLISKO</span><a href="{% if section.settings.delivery_page != blank %}{{ section.settings.delivery_page.url }}{% else %}/pages/dostawa{% endif %}">Dostawa</a><a href="{% if section.settings.returns_page != blank %}{{ section.settings.returns_page.url }}{% else %}/pages/zwroty{% endif %}">Zwroty</a><a href="{% if section.settings.contact_page != blank %}{{ section.settings.contact_page.url }}{% else %}/pages/kontakt{% endif %}">Kontakt</a></div><div><span class="eyebrow">ZŁAP NASZ KLIMAT</span><p>Kawa. Koc. Chwila dla siebie.</p>{% if section.settings.instagram != blank %}<a href="{{ section.settings.instagram }}" rel="noopener" target="_blank">Instagram ↗</a>{% endif %}{% if section.settings.tiktok != blank %}<a href="{{ section.settings.tiktok }}" rel="noopener" target="_blank">TikTok ↗</a>{% endif %}</div></div><div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} Velune</span><span>Małe rytuały. Wielkie przyjemności.</span>{% if shop.privacy_policy %}<a href="{{ shop.privacy_policy.url }}">Prywatność</a>{% endif %}</div></footer>
+{% schema %}
+{
+  "name": "Stopka",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Opis",
+      "default": "Zapachy, które sprawiają, że chce się zostać w domu."
+    },
+    {
+      "type": "page",
+      "id": "delivery_page",
+      "label": "Strona dostawy"
+    },
+    {
+      "type": "page",
+      "id": "returns_page",
+      "label": "Strona zwrotów"
+    },
+    {
+      "type": "page",
+      "id": "contact_page",
+      "label": "Strona kontaktu"
+    },
+    {
+      "type": "url",
+      "id": "instagram",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "tiktok",
+      "label": "TikTok"
+    }
+  ]
+}
+{% endschema %}
+

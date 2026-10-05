@@ -1,0 +1,7 @@
+<section class="cart-page wrap"><p class="eyebrow">TWÓJ DOMOWY RYTUAŁ</p><h1>Koszyk</h1>{% if settings.preview_mode %}<div class="empty-state"><span aria-hidden="true">✳</span><h2>Jeszcze chwilę.</h2><p>Przygotowujemy pierwsze zapachy Velune. Zamówienia ruszą po premierze.</p><a class="button button-dark" href="{{ routes.all_products_collection_url }}">Poznaj Apple Crumble ↗</a></div>{% elsif cart.item_count == 0 %}<div class="empty-state"><h2>Tu zaczyna się Twoja chwila.</h2><p>Twój koszyk jest pusty.</p><a class="button button-dark" href="{{ routes.all_products_collection_url }}">Odkryj zapachy ↗</a></div>{% else %}<form action="{{ routes.cart_url }}" method="post">{% for item in cart.items %}<div class="cart-item"><a href="{{ item.url }}">{{ item.product.title | escape }}</a><label for="CartQuantity-{{ item.index | plus: 1 }}">Liczba sztuk</label><input id="CartQuantity-{{ item.index | plus: 1 }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0"><span>{{ item.final_line_price | money }}</span><a href="{{ item.url_to_remove }}">Usuń</a></div>{% endfor %}<p class="cart-total">Suma: {{ cart.total_price | money }}</p><button class="button button-outline" name="update" type="submit">Aktualizuj koszyk</button><button class="button button-dark" name="checkout" type="submit">Przejdź do zamówienia</button></form>{% endif %}</section>
+{% schema %}
+{
+  "name": "Koszyk",
+  "settings": []
+}
+{% endschema %}

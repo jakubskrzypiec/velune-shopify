@@ -1,0 +1,31 @@
+<section class="collection wrap"><div class="collection-intro"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h1>{{ collection.title | default: section.settings.heading | escape }}</h1><div class="prose">{% if collection.description != blank %}{{ collection.description }}{% else %}{{ section.settings.description }}{% endif %}</div></div><div class="collection-toolbar"><span>Świece zapachowe</span><span>{% if collection.products_count > 0 %}{{ collection.products_count }}{% else %}1{% endif %} zapach{% if collection.products_count > 1 %}y{% endif %}</span></div>{% paginate collection.products by 12 %}<div class="collection-grid">{% for item in collection.products %}{% render 'product-card', product: item %}{% else %}{% render 'product-card', product: section.settings.product %}{% endfor %}</div>{% if paginate.pages > 1 %}<nav class="pagination" aria-label="Strony kolekcji">{{ paginate | default_pagination }}</nav>{% endif %}{% endpaginate %}<div class="collection-note"><p class="eyebrow">TO DOPIERO POCZĄTEK</p><p>Świece otwierają świat Velune. Kolejne domowe rytuały przyjdą z czasem.</p></div></section>
+{% schema %}
+{
+  "name": "Lista produktów",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Nadtytuł",
+      "default": "ZNAJDŹ SWOJĄ CHWILĘ"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Nagłówek",
+      "default": "Zapachy do zostania."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Opis",
+      "default": "<p>Przytulne kompozycje inspirowane jesienią i domowymi przyjemnościami. Poznaj pierwszy zapach Velune.</p>"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produkt podglądu"
+    }
+  ]
+}
+{% endschema %}

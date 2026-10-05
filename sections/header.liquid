@@ -1,0 +1,21 @@
+<div class="announcement">{{ section.settings.announcement | escape }}</div>
+<header class="site-header">
+  <a class="brand" href="{{ routes.root_url }}" aria-label="Velune — strona główna">{% if settings.logo %}<img src="{{ settings.logo | image_url: width: 400 }}" alt="velune" width="{{ settings.logo.width }}" height="{{ settings.logo.height }}">{% else %}<img src="{{ 'velune-logo-black.png' | asset_url }}" alt="velune" width="2157" height="729">{% endif %}</a>
+  <nav class="desktop-nav" aria-label="Nawigacja główna"><a href="{{ routes.root_url }}#marka">O marce</a><a href="{{ routes.all_products_collection_url }}">Produkty</a><a href="{{ routes.root_url }}#rytual">Małe rytuały</a></nav>
+  <a class="header-link" href="{{ routes.cart_url }}" aria-label="Koszyk, {{ cart.item_count }} produktów">Koszyk <span class="cart-count">{{ cart.item_count }}</span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="MobileMenu" aria-label="Otwórz menu"><span></span><span></span></button>
+  <nav id="MobileMenu" class="mobile-menu" aria-label="Nawigacja mobilna" hidden><a href="{{ routes.root_url }}#marka">O marce</a><a href="{{ routes.all_products_collection_url }}">Produkty</a><a href="{{ routes.root_url }}#rytual">Małe rytuały</a><a href="{{ routes.cart_url }}">Koszyk</a></nav>
+</header>
+{% schema %}
+{
+  "name": "Nagłówek",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Pasek informacyjny",
+      "default": "Jesienna kolekcja. Już wkrótce w Twoim domu."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+<section id="rytual" class="ritual"><div class="wrap"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="ritual-grid">{% for block in section.blocks %}<div {{ block.shopify_attributes }}><span class="ritual-number">0{{ forloop.index }}</span><h3>{{ block.settings.title | escape }}</h3><div class="prose">{{ block.settings.copy }}</div></div>{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Mały rytuał",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Nadtytuł",
+      "default": "CHWILA TYLKO DLA CIEBIE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Nagłówek",
+      "default": "Twój wieczór. Po swojemu."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Krok",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tytuł",
+          "default": "Zwolnij."
+        },
+        {
+          "type": "richtext",
+          "id": "copy",
+          "label": "Opis",
+          "default": "<p>Zostaw dzień za sobą. Teraz jest czas dla Ciebie.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mały rytuał",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Zwolnij.",
+            "copy": "<p>Odłóż telefon. Zaparz coś dobrego. Nic nie musisz.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Otul przestrzeń.",
+            "copy": "<p>Wybierz zapach, który pasuje do Twojego wieczoru.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Zostań chwilę.",
+            "copy": "<p>Ulubiona książka, miękki koc, przyjemnie znajomy dom.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

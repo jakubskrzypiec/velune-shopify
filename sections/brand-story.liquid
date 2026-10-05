@@ -1,0 +1,31 @@
+<section id="marka" class="brand-story wrap"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="brand-story-bottom"><span class="little-star" aria-hidden="true">✳</span><div class="prose">{{ section.settings.copy }}</div></div></section>
+{% schema %}
+{
+  "name": "O marce",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Nadtytuł",
+      "default": "MIŁO BYĆ W DOMU"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Nagłówek",
+      "default": "Nie potrzeba wiele, żeby zwykły wieczór stał się Twoim ulubionym."
+    },
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Opis",
+      "default": "<p>Velune powstaje z miłości do małych domowych rytuałów. Do pierwszego łyku kawy, miękkiego koca i zapachów, które otulają przestrzeń.</p><p>Nasza pierwsza kolekcja to zaproszenie do zwolnienia. Zrób sobie miejsce na chwilę przyjemności.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "O marce"
+    }
+  ]
+}
+{% endschema %}

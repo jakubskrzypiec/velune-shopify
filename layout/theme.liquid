@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+  {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% if settings.favicon %}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">{% else %}<link rel="icon" type="image/png" href="{{ 'velune-favicon.png' | asset_url }}">{% endif %}
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'theme.js' | asset_url }}" defer></script>
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template.name }}{% if settings.preview_mode %} is-preview{% endif %}">
+<a class="skip-link" href="#MainContent">Przejdź do treści</a>
+{% sections 'header-group' %}
+<main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
+{% sections 'footer-group' %}
+</body></html>

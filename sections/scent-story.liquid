@@ -1,0 +1,54 @@
+<section id="zapach" class="scent-story"><div class="scent-story-image">{% render 'picture', image: section.settings.image, fallback: 'velune-autumn-hero.webp', alt: 'Świeca Apple Crumble, jabłka i deser w jesiennym wnętrzu', sizes: '(min-width: 900px) 50vw, 100vw' %}</div><div class="scent-story-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="prose">{{ section.settings.description }}</div><div class="scent-profile"><div><span>INSPIRACJA</span><strong>{{ section.settings.inspiration | escape }}</strong></div><div><span>NASTRÓJ</span><strong>{{ section.settings.mood | escape }}</strong></div><div><span>TWÓJ MOMENT</span><strong>{{ section.settings.moment | escape }}</strong></div></div></div></section>
+{% schema %}
+{
+  "name": "Historia zapachu",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Zdjęcie"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Nadtytuł",
+      "default": "TAK PACHNIE TWOJA CHWILA"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Nagłówek",
+      "default": "Jak ciepły deser w chłodny wieczór."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Opis",
+      "default": "<p>Za oknem złote liście. W domu ulubiony kubek i coś dobrego na stole. Apple Crumble bierze inspirację z tego prostego, znajomego szczęścia.</p><p>Jabłka i kruszonka na etykiecie opowiadają historię zapachu — jeszcze zanim otworzysz słoik.</p>"
+    },
+    {
+      "type": "text",
+      "id": "inspiration",
+      "label": "Inspiracja",
+      "default": "Jabłka pod złotą kruszonką"
+    },
+    {
+      "type": "text",
+      "id": "mood",
+      "label": "Nastrój",
+      "default": "Ciepły, słodki, domowy"
+    },
+    {
+      "type": "text",
+      "id": "moment",
+      "label": "Moment",
+      "default": "Wieczór bez pośpiechu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Historia zapachu"
+    }
+  ]
+}
+{% endschema %}

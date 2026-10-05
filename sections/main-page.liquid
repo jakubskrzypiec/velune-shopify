@@ -1,0 +1,7 @@
+<section class="text-page wrap"><p class="eyebrow">VELUNE / INFORMACJE</p><h1>{{ page.title | default: 'Informacje' | escape }}</h1><div class="prose">{% if page.content != blank %}{{ page.content }}{% else %}<p>Szczegóły udostępnimy przed premierą sklepu.</p>{% endif %}</div></section>
+{% schema %}
+{
+  "name": "Strona informacyjna",
+  "settings": []
+}
+{% endschema %}
