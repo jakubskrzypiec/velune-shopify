@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path'),http=require('http');
 const {Liquid}=require('liquidjs');
 const root=path.resolve(__dirname,'..');
-const engine=new Liquid({root:path.join(root,'snippets'),extname:'.liquid',strictFilters:false});
+const engine=new Liquid({root:path.join(root,'snippets'),extname:'.liquid',strictFilters:false,globals:{settings:{preview_mode:true,preview_price:50,preview_regular_price:75}}});
 engine.registerFilter('asset_url',x=>'/assets/'+x);
 engine.registerFilter('stylesheet_tag',x=>'<link rel="stylesheet" href="'+x+'">');
 engine.registerFilter('image_url',(x)=>typeof x==='string'?x:x?.src);
