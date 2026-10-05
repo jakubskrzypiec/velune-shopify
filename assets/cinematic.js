@@ -28,17 +28,6 @@
         if (event.target.matches('input[type=radio]')) picker.querySelector('[data-bundle-total]').textContent = event.target.dataset.total;
       });
     });
-    root.querySelectorAll('[data-motion-toggle]').forEach(button => {
-      if (button.dataset.ready) return;
-      button.dataset.ready = 'true';
-      button.addEventListener('click', () => {
-        const paused = document.documentElement.classList.toggle('motion-paused');
-        document.querySelectorAll('[data-motion-toggle]').forEach(item => {
-          item.setAttribute('aria-pressed', String(paused));
-          item.textContent = paused ? 'Wznów animacje' : 'Zatrzymaj animacje';
-        });
-      });
-    });
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle('scene-outside', !entry.isIntersecting)));
       root.querySelectorAll('.living-scene,.autumn-interlude').forEach(scene => observer.observe(scene));

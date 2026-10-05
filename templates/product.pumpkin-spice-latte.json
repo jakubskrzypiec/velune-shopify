@@ -70,11 +70,106 @@
     "park": {
       "type": "autumn-interlude",
       "settings": {}
+    },
+    "details": {
+      "type": "product-details",
+      "settings": {},
+      "blocks": {
+        "reading": {
+          "type": "moment",
+          "settings": {
+            "title": "Jeszcze jeden rozdział.",
+            "copy": "<p>Otwórz książkę, znajdź najwygodniejszy fotel i pozwól wieczorowi płynąć wolniej.</p>"
+          }
+        },
+        "home": {
+          "type": "moment",
+          "settings": {
+            "title": "Powrót do siebie.",
+            "copy": "<p>Odłóż codzienny pośpiech. Zaparz coś ciepłego i zostań przez chwilę tu, gdzie lubisz być.</p>"
+          }
+        },
+        "company": {
+          "type": "moment",
+          "settings": {
+            "title": "Chwila razem.",
+            "copy": "<p>Spokojna rozmowa, ulubiona muzyka i przytulny dom. Małe przyjemności lubią dobre towarzystwo.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "reading",
+        "home",
+        "company"
+      ]
+    },
+    "gift": {
+      "type": "gift",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "scents": {
+          "type": "question",
+          "settings": {
+            "question": "Jakie zapachy znajdę w kolekcji?",
+            "answer": "<p>Przygotowujemy Apple Crumble, Cinnamon i Pumpkin Spice Latte — trzy inspiracje na przytulne jesienne wieczory. Finalne kompozycje zapachowe podamy przed premierą.</p>"
+          }
+        },
+        "wax": {
+          "type": "question",
+          "settings": {
+            "question": "Co kryje słoik?",
+            "answer": "<p>Planowana świeca to 150 g wosku sojowego, bawełniany knot i brązowy słoik 180 ml. Producent deklaruje około 35 godzin palenia; czas zależy od warunków użytkowania.</p>"
+          }
+        },
+        "bundles": {
+          "type": "question",
+          "settings": {
+            "question": "Czy będą pakiety kilku świec?",
+            "answer": "<p>Tak. Przy planowanej cenie 50 zł za sztukę pakiet dwóch świec kosztuje 95 zł, a trzech 135 zł. Obecny wybór pakietu to podgląd; sprzedaż jeszcze nie jest uruchomiona.</p>"
+          }
+        },
+        "launch": {
+          "type": "question",
+          "settings": {
+            "question": "Kiedy będzie można zamówić świecę?",
+            "answer": "<p>Kolekcja jest w przygotowaniu. Termin premiery oraz szczegóły dostawy i zwrotów udostępnimy przed rozpoczęciem sprzedaży.</p>"
+          }
+        },
+        "gift": {
+          "type": "question",
+          "settings": {
+            "question": "Czy świeca pasuje na prezent?",
+            "answer": "<p>To pomysł na drobny upominek dla osoby, która lubi jesienne zapachy i przytulny dom. Szczegóły opakowania udostępnimy przed premierą.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "scents",
+        "wax",
+        "bundles",
+        "launch",
+        "gift"
+      ]
+    },
+    "related": {
+      "type": "featured-candle",
+      "settings": {
+        "kicker": "JESZCZE JEDEN DOMOWY RYTUAŁ",
+        "heading": "Cała jesienna kolekcja."
+      }
     }
   },
   "order": [
     "main",
     "story",
-    "park"
+    "details",
+    "gift",
+    "park",
+    "faq",
+    "related"
   ]
 }

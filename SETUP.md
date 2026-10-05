@@ -22,3 +22,5 @@ Collection preview update: create three draft candle products with handles apple
 
 
 Immersive preview: prices of PLN 50 and planned regular price PLN 75 are visual planning data, not historical sale prices. Package previews are 2 units for PLN 95 and 3 for PLN 135 at the planned PLN 50 unit price. These interactive selectors do not submit cart or apply actual Shopify discounts. Configure actual products/prices and discount rules in Shopify only after launch approval. Animated still photos use lightweight CSS flame, steam, curtain and shadow effects. Custom uploaded scene images disable overlays by default. Motion can be paused and respects prefers-reduced-motion.
+
+Autumn refinement: homepage order is hero, products, evening, gift, park, FAQ. Product pages include editorial content and a gift section between the evening scene and park. Additional neutral-detail photographs complement the warm editorial images. All artwork remains generated design imagery. Visible motion pause controls were removed at the owner's request; operating-system reduced-motion preference is still respected.
