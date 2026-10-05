@@ -1,7 +1,7 @@
-<section class="featured wrap"><div class="section-heading"><div><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2></div><a class="text-link" href="{{ routes.all_products_collection_url }}">Zobacz produkty <span aria-hidden="true">↗</span></a></div><div class="featured-grid">{% render 'product-card', product: section.settings.product %}<div class="featured-editorial">{% render 'picture', image: section.settings.image, fallback: 'velune-autumn-hero.webp', alt: 'Jesienny rytuał z Velune', sizes: '(min-width: 900px) 60vw, 100vw' %}<div><p class="eyebrow light">{{ section.settings.story_kicker | escape }}</p><h3>{{ section.settings.story_heading | escape }}</h3></div></div></div></section>
+<section class="featured wrap"><div class="section-heading"><div><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2></div><a class="text-link" href="{{ routes.all_products_collection_url }}">Zobacz produkty <span aria-hidden="true">↗</span></a></div><div class="collection-grid">{% if section.settings.collection != blank %}{% for item in section.settings.collection.products limit: 3 %}{% render 'product-card', product: item %}{% else %}{% render 'preview-candles' %}{% endfor %}{% else %}{% render 'preview-candles' %}{% endif %}</div></section>
 {% schema %}
 {
-  "name": "Świeca wyróżniona",
+  "name": "Jesienna kolekcja",
   "settings": [
     {
       "type": "text",
@@ -16,9 +16,9 @@
       "default": "Jesień zamknięta w zapachu."
     },
     {
-      "type": "product",
-      "id": "product",
-      "label": "Wyróżniony produkt"
+      "type": "collection",
+      "id": "collection",
+      "label": "Kolekcja produktów"
     },
     {
       "type": "image_picker",

@@ -1,6 +1,6 @@
-<section class="hero hero--park">
-{% render 'picture', image: section.settings.image, fallback: 'velune-autumn-park.webp', alt: 'Złote liście, parkowa ścieżka i ciepłe jesienne światło', class: 'hero-image', loading: 'eager' %}
-<div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h1>{{ section.settings.heading | escape | newline_to_br }}</h1><p class="hero-description">{{ section.settings.description | escape }}</p><a class="button button-dark" href="{% if section.settings.product != blank %}{{ section.settings.product.url }}{% else %}/products/apple-crumble{% endif %}">{{ section.settings.cta | escape }} <span aria-hidden="true">↗</span></a></div><span class="hero-footnote">DOM PACHNIE DOBRZE.</span>
+<section class="hero hero--collection">
+{% render 'picture', image: section.settings.image, fallback: 'velune-collection-hero-v2.webp', alt: 'Trzy świece Velune z kremowymi etykietami w jesiennej aranżacji', class: 'hero-image', loading: 'eager' %}
+<div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h1>{{ section.settings.heading | escape | newline_to_br }}</h1><p class="hero-description">{{ section.settings.description | escape }}</p><a class="button button-dark" href="{% if section.settings.product != blank %}{{ section.settings.product.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">{{ section.settings.cta | escape }} <span aria-hidden="true">↗</span></a></div><span class="hero-footnote">DOM PACHNIE DOBRZE.</span>
 </section>
 {% schema %}
 {
@@ -27,13 +27,13 @@
       "type": "text",
       "id": "description",
       "label": "Opis",
-      "default": "Zapach pieczonych jabłek. Ciepło domowego wieczoru. Małe przyjemności, do których chce się wracać."
+      "default": "Trzy zapachy inspirowane jesienią. Małe rytuały, które sprawiają, że chce się zostać w domu."
     },
     {
       "type": "text",
       "id": "cta",
       "label": "Przycisk",
-      "default": "Poznaj Apple Crumble"
+      "default": "Poznaj kolekcję"
     },
     {
       "type": "product",

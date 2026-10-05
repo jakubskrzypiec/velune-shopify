@@ -3,7 +3,7 @@ const fs=require('fs'),path=require('path');
 const {render}=require('./preview.cjs');
 const root=path.resolve(__dirname,'..');
 const base='/velune-shopify';
-const routes=['/','/collections/all','/products/apple-crumble','/cart','/pages/dostawa','/pages/zwroty','/pages/kontakt','/password'];
+const routes=['/','/collections/all','/products/apple-crumble','/products/cinnamon','/products/pumpkin-spice-latte','/cart','/pages/dostawa','/pages/zwroty','/pages/kontakt','/password'];
 (async()=>{
   for(const route of routes){
     let html=await render(route);

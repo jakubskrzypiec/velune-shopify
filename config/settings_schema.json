@@ -33,21 +33,5 @@
         "info": "Wyłącz dopiero po potwierdzeniu produktów i logistyki. To ustawienie nie blokuje checkoutu Shopify; zachowaj hasło sklepu i nie publikuj motywu przed zgodą."
       }
     ]
-  },
-  {
-    "name": "Jesienna strona główna",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "autumn_background",
-        "label": "Park wokół jasnej kartki",
-        "default": true
-      },
-      {
-        "type": "image_picker",
-        "id": "park_background",
-        "label": "Ilustracja tła strony"
-      }
-    ]
   }
 ]

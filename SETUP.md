@@ -16,3 +16,6 @@ This is an unpublished Shopify Online Store 2.0 theme. The preview_mode setting 
 JSON templates: index, collection, product, page, cart, 404 and password. Header and footer are section groups. Native product and cart forms exist behind preview_mode for future activation. No payment setup or third-party fulfillment integration is included.
 
 Local preview renders the same Liquid sections with fixture Shopify objects; it does not execute the Shopify backend. Shopify upload and real storefront validation require access to the store.
+
+
+Collection preview update: create three draft candle products with handles apple-crumble, cinnamon and pumpkin-spice-latte. Assign product.cinnamon and product.pumpkin-spice-latte templates to the corresponding drafts. Upload the matching minimal product images and labels from assets; select the three-product collection in the homepage Jesienna kolekcja section. Descriptions are scent inspirations pending final composition. Keep preview mode and password protection enabled until launch. Reed diffuser in hero is a visual concept only.
