@@ -7,7 +7,9 @@
   <link rel="canonical" href="{{ canonical_url }}">
   {% if settings.favicon %}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">{% else %}<link rel="icon" type="image/png" href="{{ 'velune-favicon.png' | asset_url }}">{% endif %}
   {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'cinematic.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'theme.js' | asset_url }}" defer></script>
+  <script src="{{ 'cinematic.js' | asset_url }}" defer></script>
   {{ content_for_header }}
 </head>
 <body class="template-{{ template.name }}{% if settings.preview_mode %} is-preview{% endif %}">

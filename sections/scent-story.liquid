@@ -1,4 +1,5 @@
-<section id="zapach" class="scent-story"><div class="scent-story-image">{% render 'picture', image: section.settings.image, fallback: 'velune-collection-hero-v2.webp', alt: 'Świece Velune w jesiennej aranżacji', sizes: '(min-width: 900px) 50vw, 100vw' %}</div><div class="scent-story-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="prose">{{ section.settings.description }}</div><div class="scent-profile"><div><span>INSPIRACJA</span><strong>{{ section.settings.inspiration | escape }}</strong></div><div><span>NASTRÓJ</span><strong>{{ section.settings.mood | escape }}</strong></div><div><span>TWÓJ MOMENT</span><strong>{{ section.settings.moment | escape }}</strong></div></div></div></section>
+{% assign scene_handle = product.handle | default: 'apple-crumble' %}{% assign scene_image = 'velune-' | append: scene_handle | append: '-evening-v1.webp' %}{% assign flame_y = 46.2 %}{% assign tea_x = 79.6 %}{% assign tea_y = 53.5 %}{% if scene_handle == 'cinnamon' %}{% assign flame_y = 46 %}{% assign tea_y = 50 %}{% elsif scene_handle == 'pumpkin-spice-latte' %}{% assign flame_y = 44.1 %}{% assign tea_x = 77 %}{% assign tea_y = 48.5 %}{% endif %}
+<section id="zapach" class="scent-story"><div class="scent-story-image">{% assign play = section.settings.motion %}{% if section.settings.image != blank %}{% assign play = false %}{% endif %}{% render 'living-scene', image: section.settings.image, fallback: scene_image, alt: product.title, fx: 50.2, fy: flame_y, tea: true, tx: tea_x, ty: tea_y, curtain: true, animate: play %}<button class="motion-toggle" data-motion-toggle aria-pressed="false">Zatrzymaj animacje</button></div><div class="scent-story-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="prose">{{ section.settings.description }}</div><div class="scent-profile"><div><span>INSPIRACJA</span><strong>{{ section.settings.inspiration | escape }}</strong></div><div><span>NASTRÓJ</span><strong>{{ section.settings.mood | escape }}</strong></div><div><span>TWÓJ MOMENT</span><strong>{{ section.settings.moment | escape }}</strong></div></div></div></section>
 {% schema %}
 {
   "name": "Historia zapachu",
@@ -43,6 +44,12 @@
       "id": "moment",
       "label": "Moment",
       "default": "Wieczór bez pośpiechu"
+    },
+    {
+      "type": "checkbox",
+      "id": "motion",
+      "label": "Animacje domowego zdjęcia podglądu",
+      "default": true
     }
   ],
   "presets": [

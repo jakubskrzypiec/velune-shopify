@@ -19,3 +19,6 @@ Local preview renders the same Liquid sections with fixture Shopify objects; it 
 
 
 Collection preview update: create three draft candle products with handles apple-crumble, cinnamon and pumpkin-spice-latte. Assign product.cinnamon and product.pumpkin-spice-latte templates to the corresponding drafts. Upload the matching minimal product images and labels from assets; select the three-product collection in the homepage Jesienna kolekcja section. Descriptions are scent inspirations pending final composition. Keep preview mode and password protection enabled until launch. Reed diffuser in hero is a visual concept only.
+
+
+Immersive preview: prices of PLN 50 and planned regular price PLN 75 are visual planning data, not historical sale prices. Package previews are 2 units for PLN 95 and 3 for PLN 135 at the planned PLN 50 unit price. These interactive selectors do not submit cart or apply actual Shopify discounts. Configure actual products/prices and discount rules in Shopify only after launch approval. Animated still photos use lightweight CSS flame, steam, curtain and shadow effects. Custom uploaded scene images disable overlays by default. Motion can be paused and respects prefers-reduced-motion.

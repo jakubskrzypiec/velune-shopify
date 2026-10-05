@@ -5,7 +5,7 @@
       "settings": {
         "fallback_title": "Cinnamon",
         "subtitle": "Korzenny akcent na spokojny wieczór.",
-        "description": "<p>Cinnamon to projekt ciepłego zapachu inspirowanego cynamonem i domowymi rytuałami. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Finalną kompozycję podamy przed premierą.</p>"
+        "description": "<p>Cinnamon czerpie inspirację z cynamonu i domowych rytuałów. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Finalną kompozycję podamy przed premierą.</p>"
       },
       "blocks": {
         "apple": {
@@ -61,48 +61,20 @@
       "type": "scent-story",
       "settings": {
         "heading": "Ciepło, które zaprasza do środka.",
-        "description": "<p>Cinnamon to projekt ciepłego zapachu inspirowanego cynamonem i domowymi rytuałami. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Subtelna ilustracja na kremowej etykiecie sprawia, że świeca dobrze odnajduje się we wnętrzu.</p>",
+        "description": "<p>Cinnamon czerpie inspirację z cynamonu i domowych rytuałów. Przytulna chwila, ulubiona książka i wieczór bez pośpiechu.</p><p>Subtelna ilustracja na kremowej etykiecie sprawia, że świeca dobrze odnajduje się we wnętrzu.</p>",
         "inspiration": "Cynamon i jesienne rytuały",
         "mood": "Ciepły, korzenny, przytulny",
         "moment": "Wieczór bez pośpiechu"
       }
     },
-    "ritual": {
-      "type": "ritual",
-      "settings": {},
-      "blocks": {
-        "a": {
-          "type": "step",
-          "settings": {
-            "title": "Zwolnij.",
-            "copy": "<p>Odłóż telefon. Zaparz coś dobrego. Nic nie musisz.</p>"
-          }
-        },
-        "b": {
-          "type": "step",
-          "settings": {
-            "title": "Otul przestrzeń.",
-            "copy": "<p>Wybierz zapach, który pasuje do Twojego wieczoru.</p>"
-          }
-        },
-        "c": {
-          "type": "step",
-          "settings": {
-            "title": "Zostań chwilę.",
-            "copy": "<p>Ulubiona książka, miękki koc, przyjemnie znajomy dom.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "a",
-        "b",
-        "c"
-      ]
+    "park": {
+      "type": "autumn-interlude",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "story",
-    "ritual"
+    "park"
   ]
 }

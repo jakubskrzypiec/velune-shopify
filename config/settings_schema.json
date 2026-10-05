@@ -33,5 +33,22 @@
         "info": "Wyłącz dopiero po potwierdzeniu produktów i logistyki. To ustawienie nie blokuje checkoutu Shopify; zachowaj hasło sklepu i nie publikuj motywu przed zgodą."
       }
     ]
+  },
+  {
+    "name": "Planowane ceny",
+    "settings": [
+      {
+        "type": "number",
+        "id": "preview_price",
+        "label": "Planowana cena premierowa (zł)",
+        "default": 50
+      },
+      {
+        "type": "number",
+        "id": "preview_regular_price",
+        "label": "Planowana cena regularna (zł)",
+        "default": 75
+      }
+    ]
   }
 ]

@@ -1,6 +1,8 @@
 {
   "current": {
-    "preview_mode": true
+    "preview_mode": true,
+    "preview_price": 50,
+    "preview_regular_price": 75
   },
   "presets": {}
 }

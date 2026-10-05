@@ -3,9 +3,14 @@
     "main": {
       "type": "main-collection",
       "settings": {}
+    },
+    "park": {
+      "type": "autumn-interlude",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "park"
   ]
 }

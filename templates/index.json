@@ -4,51 +4,18 @@
       "type": "hero",
       "settings": {}
     },
-    "story": {
-      "type": "brand-story",
-      "settings": {}
-    },
     "featured": {
       "type": "featured-candle",
       "settings": {}
     },
-    "ritual": {
-      "type": "ritual",
-      "settings": {},
-      "blocks": {
-        "a": {
-          "type": "step",
-          "settings": {
-            "title": "Zwolnij.",
-            "copy": "<p>Odłóż telefon. Zaparz coś dobrego. Nic nie musisz.</p>"
-          }
-        },
-        "b": {
-          "type": "step",
-          "settings": {
-            "title": "Otul przestrzeń.",
-            "copy": "<p>Wybierz zapach, który pasuje do Twojego wieczoru.</p>"
-          }
-        },
-        "c": {
-          "type": "step",
-          "settings": {
-            "title": "Zostań chwilę.",
-            "copy": "<p>Ulubiona książka, miękki koc, przyjemnie znajomy dom.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "a",
-        "b",
-        "c"
-      ]
+    "evening": {
+      "type": "evening",
+      "settings": {}
     }
   },
   "order": [
     "hero",
-    "story",
     "featured",
-    "ritual"
+    "evening"
   ]
 }

@@ -1,0 +1,5 @@
+<div class="living-scene{% if curtain %} has-curtain{% endif %}" data-living-scene>
+{% render 'picture', image: image, fallback: fallback, alt: alt, class: 'scene-photo', loading: loading %}
+{% if animate %}<div class="scene-motion" aria-hidden="true"><span class="candle-light" data-scene-point data-x="{{ fx }}" data-y="{{ fy }}"><i class="flame-glow"></i><i class="flame"></i><i class="candle-vapor"></i></span>{% if tea %}<span class="tea-steam" data-scene-point data-x="{{ tx }}" data-y="{{ ty }}"><i></i><i></i><i></i></span>{% endif %}</div>{% endif %}
+{% if curtain and animate %}<div class="curtain-layer" aria-hidden="true">{% render 'picture', image: image, fallback: fallback, alt: '', class: 'scene-photo' %}</div><div class="moving-window-shadow" aria-hidden="true"></div>{% endif %}
+</div>
