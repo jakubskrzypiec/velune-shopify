@@ -1,6 +1,7 @@
 {
   "current": {
-    "preview_mode": true
+    "preview_mode": true,
+    "autumn_background": true
   },
   "presets": {}
 }

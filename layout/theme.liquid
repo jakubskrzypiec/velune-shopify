@@ -12,7 +12,12 @@
 </head>
 <body class="template-{{ template.name }}{% if settings.preview_mode %} is-preview{% endif %}">
 <a class="skip-link" href="#MainContent">Przejdź do treści</a>
+{% if template.name == 'index' and settings.autumn_background != false %}
+<div class="autumn-backdrop" aria-hidden="true">{% render 'picture', image: settings.park_background, fallback: 'velune-autumn-park.webp', alt: '', loading: 'eager' %}</div>
+<div class="paper-site">
+{% endif %}
 {% sections 'header-group' %}
 <main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
 {% sections 'footer-group' %}
+{% if template.name == 'index' and settings.autumn_background != false %}</div>{% endif %}
 </body></html>

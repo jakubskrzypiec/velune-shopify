@@ -1,6 +1,6 @@
-<section class="hero">
-{% render 'picture', image: section.settings.image, fallback: 'velune-autumn-hero.webp', alt: 'Świeca Velune Apple Crumble w ciepłym jesiennym wnętrzu', class: 'hero-image', loading: 'eager' %}
-<div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow light">{{ section.settings.kicker | escape }}</p><h1>{{ section.settings.heading | escape | newline_to_br }}</h1><p class="hero-description">{{ section.settings.description | escape }}</p><a class="button button-cream" href="{% if section.settings.product != blank %}{{ section.settings.product.url }}{% else %}/products/apple-crumble{% endif %}">{{ section.settings.cta | escape }} <span aria-hidden="true">↗</span></a></div><span class="hero-footnote">DOM PACHNIE DOBRZE.</span>
+<section class="hero hero--park">
+{% render 'picture', image: section.settings.image, fallback: 'velune-autumn-park.webp', alt: 'Złote liście, parkowa ścieżka i ciepłe jesienne światło', class: 'hero-image', loading: 'eager' %}
+<div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">{{ section.settings.kicker | escape }}</p><h1>{{ section.settings.heading | escape | newline_to_br }}</h1><p class="hero-description">{{ section.settings.description | escape }}</p><a class="button button-dark" href="{% if section.settings.product != blank %}{{ section.settings.product.url }}{% else %}/products/apple-crumble{% endif %}">{{ section.settings.cta | escape }} <span aria-hidden="true">↗</span></a></div><span class="hero-footnote">DOM PACHNIE DOBRZE.</span>
 </section>
 {% schema %}
 {
@@ -9,7 +9,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Zdjęcie główne"
+      "label": "Ilustracja hero"
     },
     {
       "type": "text",
@@ -21,7 +21,7 @@
       "type": "textarea",
       "id": "heading",
       "label": "Nagłówek",
-      "default": "Zostań.\nJeszcze chwilę."
+      "default": "Jesień ma\nswój zapach."
     },
     {
       "type": "text",
