@@ -10,6 +10,8 @@ The theme defaults to pre-launch mode: purchase forms, prices and checkout butto
 
 See [SETUP.md](SETUP.md) for product creation, editor configuration and installation. The current product and lifestyle images are generated design mockups. Shopify store upload and backend checkout testing require store access.
 
+Local preview: `npm install`, then `npm run preview`. Open `http://localhost:4173` or `/products/apple-crumble`. It renders the same Liquid sections with fixture Shopify objects. Run `npm run check:theme` to validate theme source.
+
 Theme Check: no errors or warnings. Local browser checks cover brand-to-product navigation, image gallery, mobile menu, layout at 390 px and disabled purchase flow.
 
 ## Brand assets
